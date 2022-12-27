@@ -28,7 +28,10 @@ while True:
             print(f"{name} is already in your phone book. Use command \"list\" and try again.")
     elif command == "delete":
         name = command_name_phone[1]
-        del phone_book[name]
+        if name in phone_book.keys():
+            del phone_book[name]
+        else:
+            print("There's no such contact in your phone book. Use command \"list\" and try again.")
     else:
         print("Wrong command, please try again!")
 
